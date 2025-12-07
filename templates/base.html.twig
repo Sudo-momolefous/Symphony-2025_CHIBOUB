@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html lang="fr">
 <html>
     <head>
         <meta charset="UTF-8">
@@ -8,6 +9,25 @@
         {% block stylesheets %}
         {% endblock %}
 
+
+
+        <style>
+            .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+            .example-wrapper code { background:rgb(255, 255, 255); padding: 2px 6px; }
+            .pied {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            margin-top: 20px;
+            }
+
+            body {
+            background-color: white;
+            color: black; /* optionnel si tu veux le texte en blanc */
+            }
+    
+</style>
     </head>
     <body>
         <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
@@ -50,4 +70,13 @@
                 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
             {% endblock %}
     </body>
+</div>
+
+<!-- Pied de page -->
+<footer class="pied">
+    <p>&copy; 2025 - MonSite. Tous droits réservés.</p>
+</footer>
+
 </html>
+
+

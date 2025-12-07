@@ -1,14 +1,76 @@
-{% extends 'base.html.twig' %}
+<!DOCTYPE html>
+<html lang="fr">
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <link rel="stylesheet" href="https://bootswatch.com/5/lux/bootstrap.min.css">
 
-{% block title %}Loisir{% endblock %}
+        {% block stylesheets %}
+        {% endblock %}
 
-{% block body %}
 
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background:rgb(255, 255, 255); padding: 2px 6px; }
-</style>
-<div class="example-wrapper">
+
+        <style>
+            .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+            .example-wrapper code { background:rgb(255, 255, 255); padding: 2px 6px; }
+            .pied {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            margin-top: 20px;
+            }
+
+            body {
+            background-color: white;
+            color: black; /* optionnel si tu veux le texte en blanc */
+            }
+    
+        </style>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Mon magnifique site</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarColor02">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="/"> Accueil 
+                                <span class="visually-hidden">(current)</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Loisir"> Loisir </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Login"> CV </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Mes_info">Mes info</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Langue Dispo</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#">FR/fr</a>
+                                <a class="dropdown-item" href="#">En/en</a>
+
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container">{% block body %}{% endblock %}
+            </div>
+            {% block javascript %}
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+            {% endblock %}
+    </body>
+    <div class="example-wrapper">
     <h1>Hello </h1>
 
     This friendly message is coming from:
@@ -17,4 +79,12 @@
         <li>Your template at <code>C:/Users/Admin/Documents/CHIBOUB/Symphony-2025_CHIBOUB/templates/accueil/index.html.twig</code></li>
     </ul>
 </div>
-{% endblock %}
+
+<!-- Pied de page -->
+<footer class="pied">
+    <p>&copy; 2025 - MonSite. Tous droits réservés.</p>
+</footer>
+
+</html>
+
+
