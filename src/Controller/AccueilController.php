@@ -4,61 +4,43 @@ namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Routing\Attribute\Route;
+use Symfony\Component\Routing\Annotation\Route;
 
 final class AccueilController extends AbstractController
 {
-    #[Route('/', name: 'app_accueil')]
-    public function index(): Response
+    #[Route('/{_locale}', name: 'app_accueil', defaults: ['_locale' => 'fr'], requirements: ['_locale' => 'fr|en'])]
+    public function index(string $_locale = 'fr'): Response
     {
-        return $this->render('accueil/index.html.twig');
-    }
-    #[Route('/{_locale<fr|en>}', name: 'homepage')]
-    public function indgex(): Response
-    {
-    return $this->render('accueil/index.html.twig');
+        return $this->render($_locale === 'en' ? 'accueil/index-en.html.twig' : 'accueil/index.html.twig');
     }
 
-
-
-    #[Route('/CV', name: 'app_cv')]
-    public function cv(): Response
+    #[Route('/{_locale}/CV', name: 'app_cv', defaults: ['_locale' => 'fr'], requirements: ['_locale' => 'fr|en'])]
+    public function cv(string $_locale = 'fr'): Response
     {
-        return $this->render('accueil/cv.html.twig');
+        return $this->render($_locale === 'en' ? 'accueil/cv-en.html.twig' : 'accueil/cv.html.twig');
     }
 
-
-
-    #[Route('/Login', name: 'app_login')]
-    public function login(): Response
+    #[Route('/{_locale}/Login', name: 'app_login', defaults: ['_locale' => 'fr'], requirements: ['_locale' => 'fr|en'])]
+    public function login(string $_locale = 'fr'): Response
     {
-        return $this->render('accueil/login.html.twig');
+        return $this->render($_locale === 'en' ? 'accueil/login-en.html.twig' : 'accueil/login.html.twig');
     }
 
-
-
-    #[Route('/Loisir', name: 'app_loisir')]
-    public function loisir(): Response
+    #[Route('/{_locale}/Loisir', name: 'app_loisir', defaults: ['_locale' => 'fr'], requirements: ['_locale' => 'fr|en'])]
+    public function loisir(string $_locale = 'fr'): Response
     {
-        return $this->render('accueil/loisir.html.twig');
+        return $this->render($_locale === 'en' ? 'accueil/loisir-en.html.twig' : 'accueil/loisir.html.twig');
     }
 
-
-
-    #[Route('/Contact', name: 'app_contact')]
-    public function contact(): Response
+    #[Route('/{_locale}/Contact', name: 'app_contact', defaults: ['_locale' => 'fr'], requirements: ['_locale' => 'fr|en'])]
+    public function contact(string $_locale = 'fr'): Response
     {
-        return $this->render('accueil/contacte.html.twig');
+        return $this->render($_locale === 'en' ? 'accueil/contacte-en.html.twig' : 'accueil/contacte.html.twig');
     }
 
-
-    
-    #[Route('/E-Portfolio', name: 'app_e_portfolio')]
-    public function portfolio(): Response
+    #[Route('/{_locale}/E-Portfolio', name: 'app_e_portfolio', defaults: ['_locale' => 'fr'], requirements: ['_locale' => 'fr|en'])]
+    public function portfolio(string $_locale = 'fr'): Response
     {
-        return $this->render('accueil/e-portfolio.html.twig');
+        return $this->render($_locale === 'en' ? 'accueil/e-portfolio-en.html.twig' : 'accueil/e-portfolio.html.twig');
     }
 }
-
-
-

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Mon magnifique site{% endblock %}</title>
+    <link rel="stylesheet" href="https://bootswatch.com/5/solar/bootstrap.css">
+
+    {% block stylesheets %}{% endblock %}
+
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            background-color: white;
+            color: black;
+        }
+
+        .example-wrapper {
+            margin: 1em auto;
+            max-width: 800px;
+            width: 95%;
+            font: 18px/1.5 sans-serif;
+        }
+        .example-wrapper code { background: rgb(255, 255, 255); padding: 2px 6px; }
+
+        .container {
+            flex: 1; /* prend tout l'espace restant pour pousser le footer en bas */
+        }
+
+        .pied {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        {% block inline_styles %}{% endblock %}
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="{{ path(app.request.attributes.get('_route')) }}">Mon magnifique site</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarColor02">
+            <ul class="navbar-nav me-auto">
+                {# Menu principal #}
+                <li class="nav-item">
+                    <a class="nav-link {% if app.request.attributes.get('_route') in ['app_accueil', 'app_accueil-en'] %}active{% endif %}"
+                       href="{{ app.request.attributes.get('_route') == 'app_accueil-en' ? path('app_accueil-en') : path('app_accueil') }}">
+                        Accueil
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {% if app.request.attributes.get('_route') == 'app_loisir' %}active{% endif %}" 
+                       href="{{ path('app_loisir') }}">Loisir</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {% if app.request.attributes.get('_route') == 'app_cv' %}active{% endif %}" 
+                       href="{{ path('app_cv') }}">CV</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {% if app.request.attributes.get('_route') == 'app_login' %}active{% endif %}" 
+                       href="{{ path('app_login') }}">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {% if app.request.attributes.get('_route') == 'app_contact' %}active{% endif %}" 
+                       href="{{ path('app_contact') }}">Me Contacter</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {% if app.request.attributes.get('_route') == 'app_e_portfolio' %}active{% endif %}" 
+                       href="{{ path('app_e_portfolio') }}">E-Portfolio</a>
+                </li>
+
+                {# Dropdown langue #}
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#">
+                        {{ app.request.attributes.get('_route') == 'app_accueil-en' ? 'English' : 'Français' }}
+                    </a>
+                    <div class="dropdown-menu">
+                        {% if app.request.attributes.get('_route') == 'app_accueil-en' %}
+                            <a class="dropdown-item" href="{{ path('app_accueil') }}">🇫🇷 Français</a>
+                        {% else %}
+                            <a class="dropdown-item" href="{{ path('app_accueil-en') }}">🇬🇧 English</a>
+                        {% endif %}
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container mt-4">
+    {% block body %}{% endblock %}
+</div>
+
+<footer class="pied">
+    <p>&copy; 2025 - CHIBOUB Mohamed | BUT Réseaux & Télécommunications. Tous droits réservés.</p>
+</footer>
+
+{% block javascript %}
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+{% endblock %}
+</body>
+</html>
