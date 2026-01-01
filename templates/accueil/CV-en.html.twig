@@ -1,0 +1,102 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Resume - CHIBOUB Mohamed{% endblock %}
+
+{% block inline_styles %}
+.cv-container {
+    max-width: 900px;
+    margin: 40px auto;
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0,0,0,0.1);
+}
+.header-name { font-size: 2.2rem; font-weight: bold; }
+.section-title {
+    font-size: 1.4rem;
+    border-left: 4px solid #0d6efd;
+    padding-left: 10px;
+    margin-top: 25px;
+    font-weight: bold;
+}
+@media print {
+    #downloadBtn { display: none; }
+    body { background: white !important; }
+    .cv-container { box-shadow: none; margin: 0; }
+}
+{% endblock %}
+
+{% block body %}
+<div class="text-center mb-4">
+    <button id="downloadBtn" class="btn btn-primary" onclick="window.print()">
+        Download as PDF
+    </button>
+</div>
+
+<div class="cv-container">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <div class="header-name">CHIBOUB Mohamed</div>
+            <div class="text-muted">Work-study program – Network and Systems Technician</div>
+        </div>
+        <div class="text-end">
+            <p class="mb-1"><strong>Email:</strong> mohamed.chiboub@etu.univ-st-etienne.fr</p>
+            <p class="mb-1"><strong>Phone:</strong> +33 6 00 00 00 00</p>
+            <p class="mb-0"><strong>Location:</strong> Roanne, France</p>
+        </div>
+    </div>
+
+    <div class="section-title">Skills</div>
+    <ul>
+        <li>Cisco Packet Tracer</li>
+        <li>Bootstrap / Bootswatch</li>
+        <li>Python</li>
+        <li>Linux / Windows</li>
+        <li>Git / GitHub</li>
+        <li>Quick learner and adaptable</li>
+    </ul>
+
+    <div class="section-title">Experience</div>
+    <h5>BUT Networks and Telecommunications <span class="text-muted">(2025 – Present)</span></h5>
+    <ul>
+        <li>Network setup and configuration</li>
+        <li>Network simulations using Packet Tracer</li>
+        <li>Programming in C and Python</li>
+        <li>Introduction to Docker</li>
+        <li>Embedded systems projects (Arduino / ESP32)</li>
+        <li>Web development with Symfony</li>
+        <li>Version control with GitHub</li>
+        <li>Member of the Hackcess club</li>
+    </ul>
+
+    <h5>High School <span class="text-muted">(During my high school years)</span></h5>
+    <ul>
+        <li>Student representative</li>
+        <li>Alternate student representative</li>
+        <li>Volunteer at the Student Association (MDL)</li>
+        <li>Poster and visual content designer for the MDL</li>
+        <li>Member of the role-playing game club</li>
+    </ul>
+
+    <h5>Middle School <span class="text-muted">(During my middle school years)</span></h5>
+    <ul>
+        <li>Member of the Student Life Council</li>
+        <li>Eco-representative</li>
+        <li>Student representative</li>
+        <li>Alternate representative</li>
+    </ul>
+
+    <div class="section-title">Education</div>
+    <h5>BUT Networks and Telecommunications – Université Jean Monnet <span class="text-muted">(In progress)</span></h5>
+    <h5>STI2D Technological Baccalaureate – Lycée Hippolyte Carnot</h5>
+    <h5>Middle School Certificate – Collège Albert Thomas</h5>
+
+    <div class="section-title">Languages</div>
+    <ul>
+        <li>French: Native</li>
+        <li>English: Intermediate</li>
+        <li>Spanish: Intermediate</li>
+    </ul>
+</div>
+{% endblock %}
+

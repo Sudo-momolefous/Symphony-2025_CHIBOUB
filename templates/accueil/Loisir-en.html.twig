@@ -1,0 +1,67 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hobbies and Interests{% endblock %}
+
+{% block body %}
+<div class="container my-5">
+
+    <section class="mb-5">
+        <h2 class="mb-3">Personal Introduction</h2>
+        <p>
+            Hi, I am very passionate about everything related to computer science and technology.
+            I also enjoy hands-on activities such as building, repairing devices, video games,
+            and many other creative projects.
+        </p>
+    </section>
+
+    <section class="mb-5">
+        <h2 class="mb-3">Hobbies</h2>
+        <div class="row">
+
+            <div class="col-md-4 mb-3">
+                <img src="/ressources/Telephone.jpg" class="img-fluid rounded" alt="Phone repair">
+                <p class="mt-2 text-center">Phone repair</p>
+            </div>
+
+            <div class="col-md-4 mb-3">
+                <img src="/ressources/CTF.jpg" class="img-fluid rounded" alt="CTF challenges">
+                <p class="mt-2 text-center">CTF challenges</p>
+            </div>
+
+            <div class="col-md-4 mb-3">
+                <img src="{{ asset('ressources/Dessin.jpg') }}" class="img-fluid rounded" alt="Drawing">
+                <p class="mt-2 text-center">Drawing</p>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="mb-5">
+        <h2 class="mb-3">My Passions</h2>
+        <ul>
+            <li>Repairing devices (phones, computers, tablets)</li>
+            <li>LEGO building</li>
+            <li>Video games</li>
+            <li>Manga</li>
+            <li>Anime, movies and TV series</li>
+            <li>Reading</li>
+            <li>CTF challenges</li>
+            <li>Photo and video editing</li>
+            <li>Role-playing games (such as Dungeons & Dragons)</li>
+            <li>Magic: The Gathering (beginner)</li>
+            <li>Drawing</li>
+        </ul>
+    </section>
+
+    <section class="mb-5">
+        <h2 class="mb-3">Projects and Goals</h2>
+        <ul>
+            <li>Hosting a game server (Minecraft) accessible from anywhere</li>
+            <li>Creating custom Minecraft maps</li>
+            <li>Building a personal cloud storage accessible from anywhere</li>
+            <li>Creating posters and visual content for a former association</li>
+        </ul>
+    </section>
+
+</div>
+{% endblock %}

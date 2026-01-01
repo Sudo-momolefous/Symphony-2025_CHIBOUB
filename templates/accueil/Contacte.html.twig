@@ -1,0 +1,107 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Me contacter{% endblock %}
+
+{% block body_class %}contact-page{% endblock %}
+
+{% block body %}
+<h1 class="text-center mb-5">Me contacter</h1>
+
+<div class="row g-4">
+
+    <!-- Email -->
+    <div class="col-md-6 col-lg-3">
+        <div class="card contact-card h-100 d-flex flex-column align-items-center justify-content-center text-center">
+            <div class="d-flex justify-content-center">
+                <img src="{{ asset('ressources/Mail.png') }}" class="card-img-top w-50" alt="Email">
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Email</h5>
+                <p class="card-text">mohamed.chiboub@etu.univ-st-etienne.fr</p>
+                <a href="mailto:mohamed.chiboub@etu.univ-st-etienne.fr" class="btn btn-primary w-100">Envoyer un mail</a>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Instagram -->
+    <div class="col-md-6 col-lg-3">
+        <div class="card contact-card h-100 d-flex flex-column align-items-center justify-content-center text-center">
+            <div class="d-flex justify-content-center">
+                <img src="{{ asset('ressources/Insta.png') }}" class="card-img-top" style="max-width: 45%; height: auto;" alt="Instagram">
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Instagram</h5>
+                <p class="card-text">@momolefous01</p>
+                <a href="https://instagram.com/momolefous01" target="_blank" class="btn btn-danger w-100">
+                    Voir le profil
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- Discord -->
+    <div class="col-md-6 col-lg-3">
+        <div class="card contact-card h-100 text-center">
+            <div class="d-flex justify-content-center">
+                <img src="{{ asset('ressources/Discord.png') }}" class="card-img-top w-50" alt="Discord">
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Discord</h5>
+                <p class="card-text">momolefous</p>
+                <button class="btn btn-info w-100" disabled>Ajoute-moi</button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Snap -->
+    <div class="col-md-6 col-lg-3">
+        <div class="card contact-card h-100">
+            <div class="text-center">
+                <img src="{{ asset('ressources/Snap_logo.png') }}" class="card-img-top w-50 mx-auto" alt="Snapchat">
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Snapchat</h5>
+                <p class="card-text">Disponible pour projets & questions</p>
+                <a href="#" class="btn btn-warning w-100" data-bs-toggle="modal" data-bs-target="#contactPopup">
+                    Me contacter
+                </a>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="modal fade" id="contactPopup" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content shadow p-4" style="max-width: 400px; width: 100%;">
+
+            <div class="modal-header">
+                <h5 class="modal-title text-center w-100">Snapchat</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <div class="modal-body text-center">
+                <img src="{{ asset('ressources/Snap.jpg') }}" class="img-fluid rounded mb-3" alt="Contact Image">
+                <p>Disponible pour projets & questions</p>
+
+                {# Optionnel : mini formulaire #}
+
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary w-100" data-bs-dismiss="modal">Fermer</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block inline_styles %}
+
+
+
+{% endblock %}

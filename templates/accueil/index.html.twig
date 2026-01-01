@@ -1,27 +1,19 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Accueil - Mon Site{% endblock %}
-
-{% block inline_styles %}
-.example-wrapper { 
-    margin: 1em auto; 
-    max-width: 800px; 
-    width: 95%; 
-    font: 18px/1.5 sans-serif; 
-}
-.example-wrapper code { 
-    background: rgb(255, 255, 255); 
-    padding: 2px 6px; 
-}
-{% endblock %}
+{% block title %}Accueil{% endblock %}
 
 {% block body %}
-<div class="example-wrapper text-center mt-4">
-    <h1>Hello</h1>
-    <p>This friendly message is coming from:</p>
-    <ul class="list-unstyled">
-        <li>Your controller at <code>C:/Users/Admin/Documents/CHIBOUB/Symphony-2025_CHIBOUB/src/Controller/AccueilController.php</code></li>
-        <li>Your template at <code>C:/Users/Admin/Documents/CHIBOUB/Symphony-2025_CHIBOUB/templates/accueil/index.html.twig</code></li>
-    </ul>
+<div class="text-center my-5">
+    <h1>CHIBOUB Mohamed</h1>
+    <h4 class="text-muted">Groupe A1</h4>
+    <p class="lead mt-3">Bonjour, je suis en BUT RT à l'IUT de Roanne et je suis passionné par tout ce qui touche à l'informatique.</p>
+</div>
+
+<div class="card mx-auto my-5" style="max-width: 600px;">
+    <div class="card-body text-center">
+        <h3 class="card-title">À propos de moi / Pour plus d'informations</h3>
+        <p class="card-text">Si vous souhaitez en savoir plus sur moi ou sur mes projets, cliquez sur le bouton ci-dessous !</p>
+        <a href="/Loisir" class="btn btn-primary">Pour en savoir plus</a>
+    </div>
 </div>
 {% endblock %}

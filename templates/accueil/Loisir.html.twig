@@ -1,15 +1,66 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Accueil{% endblock %}
+{% block title %}Loisirs et Centres d'Intérêt{% endblock %}
 
 {% block body %}
-    <div class="example-wrapper text-center mt-4">
-        <h1>Hello</h1>
+<div class="container my-5">
 
-        <p>This friendly message is coming from:</p>
-        <ul class="list-unstyled">
-            <li>Your controller at <code>C:/Users/Admin/Documents/CHIBOUB/Symphony-2025_CHIBOUB/src/Controller/AccueilController.php</code></li>
-            <li>Your template at <code>C:/Users/Admin/Documents/CHIBOUB/Symphony-2025_CHIBOUB/templates/accueil/index.html.twig</code></li>
-        </ul>
+    <section class="mb-5">
+        <h2 class="mb-3">Présentation personnelle</h2>
+        <p>Salut, je suis un grand passionné de tout ce qui touche à l'informatique et pas que, j'aime énormément la construction, les jeux vidéo et bien plus encore</p>
+    </section>
+
+
+    <section class="mb-5">
+        <h2 class="mb-3">Loisirs</h2>
+        <div class="row">
+            <div class="col-md-4 mb-3">
+                <img src="/ressources/Telephone.jpg" class="img-fluid rounded" alt="Loisir 1">
+                <p class="mt-2 text-center">La réparation de téléphone</p>
+            </div>
+            <div class="col-md-4 mb-3">
+                <img src="/ressources/CTF.jpg" class="img-fluid rounded" alt="Loisir 2">
+                <p class="mt-2 text-center">Les CTF</p>
+            </div>
+        <div class="col-md-4 mb-3">
+            <div class="w-50">
+                <img src="{{ asset('ressources/Dessin.jpg') }}" class="img-fluid rounded" alt="Loisir 3">
+                <p class="mt-2 text-center">Les dessins</p>
     </div>
+</div>
+
+        </div>
+    </section>
+
+   
+    <section class="mb-5">
+        <h2 class="mb-3">Mes passions</h2>
+        <ul>
+            <li>Réparer les appareils (téléphone, ordinateur, tablette)</li>
+            <li>Les Lego</li>
+            <li>Les jeux vidéo</li>
+            <li>Les mangas</li>
+            <li>Les animés/films/serie</li>
+            <li>La lecture en général</li>
+            <li>Les CTF</li>
+            <li>Montage photo/video</li>
+            <li>Les jeux de rôle (Donjon et dragon, par exemple)</li>
+            <li>Magic (nouveau joueur)</li>
+            <li>Le dessin</li>
+        </ul>
+    </section>
+
+
+    <section class="mb-5">
+        <h2 class="mb-3">Mes projets / envies</h2>
+        <ul>
+            <li>Serveur de jeu (Minecraft) disponible de partout </li>
+            <li>Création de map Minecraft</li>
+            <li>Création d'un drive maison disponible partout</li>
+            <li>Créateur d'affiches pour une ancienne association</li>
+        </ul>
+    </section>
+
+
+</div>
 {% endblock %}

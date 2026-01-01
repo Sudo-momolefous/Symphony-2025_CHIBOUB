@@ -1,62 +1,62 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Connexion{% endblock %}
+{% block title %}Login{% endblock %}
 
 {% block body %}
 <div class="container d-flex justify-content-center align-items-center" style="height: 75vh;">
     <div class="card shadow p-4" style="max-width: 400px; width: 100%;">
-        <h3 class="text-center mb-4">Connexion</h3>
 
-        <form action="/CV" method="get">
+        <h3 class="text-center mb-4">Login</h3>
+
+        <form action="/en/CV" method="get">
+
             <div class="mb-3">
-                <label for="email" class="form-label">Email</label>
+                <label for="email" class="form-label">Email address</label>
                 <input type="email" id="email" name="email" class="form-control"
-                       placeholder="Votre email" required>
+                       placeholder="Enter your email" required>
             </div>
 
             <div class="mb-3">
-                <label for="password" class="form-label">Mot de passe</label>
+                <label for="password" class="form-label">Password</label>
                 <input type="password" id="password" name="password" class="form-control"
-                       placeholder="Votre mot de passe" required>
+                       placeholder="Enter your password" required>
             </div>
 
             <button type="submit" class="btn btn-primary w-100 mt-2">
-                Se connecter
+                Sign in
             </button>
 
             <p class="text-center mt-3 mb-0">
-                Pas de compte ?
+                No account yet?
                 <a href="#" class="text-primary" data-bs-toggle="modal" data-bs-target="#createAccountModal">
-                    Créer un compte
+                    Create an account
                 </a>
             </p>
         </form>
     </div>
 </div>
 
-
 <div class="modal fade" id="createAccountModal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
 
             <div class="modal-header">
-                <h5 class="modal-title">Créer un compte</h5>
+                <h5 class="modal-title">Create an account</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
             </div>
 
             <div class="modal-body">
                 <p>
-                    La création de compte n’est pas encore disponible.
+                    Account creation is not available yet.
                 </p>
                 <p class="text-primary">
-                    Fonctionnalité à venir dans une prochaine version.
+                    This feature will be implemented in a future version.
                 </p>
-
             </div>
 
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-                    Fermer
+                    Close
                 </button>
             </div>
 
