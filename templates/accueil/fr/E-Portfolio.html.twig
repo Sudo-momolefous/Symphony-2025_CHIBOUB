@@ -6,118 +6,153 @@
 <div class="container my-5">
 
     <h1 class="text-center mb-4">Mon E-Portfolio</h1>
-    <p class="lead text-center mb-5">Voici mon E-portfolio</p>
+    <p class="lead text-center mb-5">Voici le E-portfolio de CHIBOUB Mohamed en BUT RT 1</p>
 
-    <section class="mb-5">
-        <h2>Description</h2>
-        <p>Ici, vous pouvez mettre une description générale de votre portfolio.</p>
+    {# ===================== Administrer ===================== #}
+    <section class="mb-5 p-3" style="background-color: #d5f5e3; border-radius: 10px;">
+        <h2 class="mb-4">Administrer</h2>
+
+        {% set administrer_competences = [
+            {
+                'title': 'AC11.02 Comprendre l’architecture et les fondements des systèmes numériques, les principes du codage de l’information, des communications et de l’Internet',
+                'analyse_link': 'https://docs.google.com/document/d/1pciDbHnWq_99yRCfy9ZzfJcKJLLqSj3h59XO0Ucr_Bg/edit?usp=sharing',
+                'preuve_link': 'https://docs.google.com/document/d/1jJ-umN70mfhsy18dgszxrlGaCOUC5h8HsbkJ5yBp8FY/edit?usp=sharing',
+                'description': 'Dans cet apprentissage, nous avons pour objectif de comprendre un système numérique.',
+                'ressenti': 'Pendant les activités, je me suis senti globalement à l’aise et intéressé, surtout lors des phases pratiques'
+            },
+            {
+                'title': 'AC11.3 Configurer les fonctions de base du réseau local',
+                'analyse_link': 'https://docs.google.com/document/d/1QaiqFDhXk3j-9GImzEWd1b5MHt2ARu4bsttcaV6XmVw/edit?usp=sharing',
+                'preuve_link': 'https://docs.google.com/document/d/1fF-75sIcDA1ldVesVRpGs1VwbphooMN4HEPkXJbey-M/edit?usp=sharing',
+                'description': 'Dans cet apprentissage, l’objectif est de savoir comment configurer les bases d’un réseau.',
+                'ressenti': 'Pendant les travaux pratiques et la SAE, je me suis senti progressivement plus à l’aise avec la configuration réseau.'
+            },
+            {
+                'title': 'AC11.6 Installer un poste client, expliquer la procédure mise en place',
+                'analyse_link': 'https://docs.google.com/document/d/16v024vTwf2lsZf-kIKE1lMP_0EZ1gfHuZGjpVmgCs6w/edit?usp=sharing',
+                'preuve_link': 'https://docs.google.com/document/d/19eC-XTAuixHNhTKqV-vG8bWFuY_JBp9uwrMnnH3wBfU/edit?usp=sharing',
+                'description': 'Savoir le processus d’installation un poste client.',
+                'ressenti': 'Pendant les manipulations, je me suis senti à l’aise, notamment lors de la création et de l’installation de machines virtuelles.'
+            }
+        ] %}
+
+        {% for comp in administrer_competences %}
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h3 class="card-title">{{ comp.title }}</h3>
+
+                    {% block description %}
+                        <p class="card-text">{{ comp.description }}</p>
+                    {% endblock %}
+
+                    {% block ressenti %}
+                        <div class="mt-3 mb-3">
+                            <h5>Mon ressenti et positionnement</h5>
+                            <p>{{ comp.ressenti }}</p>
+                        </div>
+                    {% endblock %}
+
+                    <a href="{{ comp.analyse_link }}" class="btn btn-primary me-2" target="_blank">Analyse réflexive</a>
+                    <a href="{{ comp.preuve_link }}" class="btn btn-secondary" target="_blank">Document de preuve</a>
+                </div>
+            </div>
+        {% endfor %}
     </section>
 
-    <section class="mb-5">
-        <h2>Compétences critiques</h2>
+    {# ===================== Connecter ===================== #}
+    <section class="mb-5 p-3" style="background-color: #d0e7f9; border-radius: 10px;">
+        <h2 class="mb-4">Connecter</h2>
 
-        <!-- Bloc compétence critique 1 -->
-        <div class="card mb-3">
-            <div class="card-body">
-                <h3 class="card-title">AC11.02 Comprendre l’architecture et les fondements des systèmes numériques, les principes du codage de l’information, des communications et de l’Internet</h3>
-                <p class="card-text">Description de la compétence critique 1.</p>
-                
-                <!-- Ressenti -->
-                <div class="mt-3 mb-3">
-                    <h5>Mon ressenti et positionnement</h5>
-                    <p>Votre ressenti et positionnement pour cette compétence.</p>
+        {% set connecter_competences = [
+            {
+                'title': 'AC12.01 Mesurer et analyser les signaux',
+                'analyse_link': 'https://docs.google.com/document/d/19oNufky1zcEQXh6POO8xODQrJcPLpvSOyDk1189HYkw/edit?usp=sharing',
+                'preuve_link': 'https://docs.google.com/document/d/16m_FGLVSZw8uufoLleq-JjsXhXAXtGit6XFlgoLdAjg/edit?usp=sharing',
+                'description': 'Notre objectif est de mesurer et analyser des signaux.',
+                'ressenti': ' j’ai beaucoup apprécié l’utilisation du réflectomètre, car l’outil est très concret et permet de visualiser rapidement l’état d’une installation réseau.'
+            },
+            {
+                'title': 'AC12.03 Déployer des supports de transmission',
+                'analyse_link': 'https://docs.google.com/document/d/1DRV1I6NoUCaNBJgtJAE0hggSyMnzKun2OuGZ6y1ixgI/edit?usp=sharing',
+                'preuve_link': 'https://docs.google.com/document/d/1a7Tz44ZtbI4HYMlOhR55KQCvDal20uHBFHlblWQKAy4/edit?usp=sharing',
+                'description': 'Notre objectif est Déployer des supports de transmission.',
+                'ressenti': 'Pendant les activités, je me suis senti très à l’aise, notamment lors des travaux pratiques sur la fibre optique.'
+            }
+        ] %}
+
+        {% for comp in connecter_competences %}
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h3 class="card-title">{{ comp.title }}</h3>
+
+                    {% block description2 %}
+                        <p class="card-text">{{ comp.description }}</p>
+                    {% endblock %}
+
+                    {% block ressenti2 %}
+                        <div class="mt-3 mb-3">
+                            <h5>Mon ressenti et positionnement</h5>
+                            <p>{{ comp.ressenti }}</p>
+                        </div>
+                    {% endblock %}
+
+                    <a href="{{ comp.analyse_link }}" class="btn btn-primary me-2" target="_blank">Analyse réflexive</a>
+                    <a href="{{ comp.preuve_link }}" class="btn btn-secondary" target="_blank">Document de preuve</a>
                 </div>
-
-                <!-- Boutons -->
-                <a href="/analyse-reflective-1" class="btn btn-primary me-2">Analyse réflexive</a>
-                <a href="/document-preuve-1" class="btn btn-secondary">Document de preuve</a>
             </div>
-        </div>
-
-
-
-        <div class="card mb-3">
-            <div class="card-body">
-                <h3 class="card-title">AC11.03 Configurer les fonctions de base du réseau local</h3>
-                <p class="card-text">Description de la compétence critique 2.</p>
-
-                <div class="mt-3 mb-3">
-                    <h5>Mon ressenti et positionnement</h5>
-                    <p>Votre ressenti et positionnement pour cette compétence.</p>
-                </div>
-
-                <a href="/analyse-reflective-2" class="btn btn-primary me-2">Analyse réflexive</a>
-                <a href="/document-preuve-2" class="btn btn-secondary">Document de preuve</a>
-            </div>
-        </div>
-
-
-
-        <div class="card mb-3">
-            <div class="card-body">
-                <h3 class="card-title">AC11.05 Savoir identifier les dysfonctionnements du réseau local</h3>
-                <p class="card-text">Description de la compétence critique 2.</p>
-
-                <div class="mt-3 mb-3">
-                    <h5>Mon ressenti et positionnement</h5>
-                    <p>Votre ressenti et positionnement pour cette compétence.</p>
-                </div>
-
-                <a href="/analyse-reflective-2" class="btn btn-primary me-2">Analyse réflexive</a>
-                <a href="/document-preuve-2" class="btn btn-secondary">Document de preuve</a>
-            </div>
-        </div>
-
-
-
-        <div class="card mb-3">
-            <div class="card-body">
-                <h3 class="card-title">AC11.06 Installer un poste client, expliquer la procédure mise en place</h3>
-                <p class="card-text">Description de la compétence critique 2.</p>
-
-                <div class="mt-3 mb-3">
-                    <h5>Mon ressenti et positionnement</h5>
-                    <p>Votre ressenti et positionnement pour cette compétence.</p>
-                </div>
-
-                <a href="/analyse-reflective-2" class="btn btn-primary me-2">Analyse réflexive</a>
-                <a href="/document-preuve-2" class="btn btn-secondary">Document de preuve</a>
-            </div>
-        </div>
-
-
-
-        <div class="card mb-3">
-            <div class="card-body">
-                <h3 class="card-title">AC13.01 Utiliser un système informatique et ses outils</h3>
-                <p class="card-text">Description de la compétence critique 2.</p>
-
-                <div class="mt-3 mb-3">
-                    <h5>Mon ressenti et positionnement</h5>
-                    <p>Votre ressenti et positionnement pour cette compétence.</p>
-                </div>
-
-                <a href="/analyse-reflective-2" class="btn btn-primary me-2">Analyse réflexive</a>
-                <a href="/document-preuve-2" class="btn btn-secondary">Document de preuve</a>
-            </div>
-        </div>
-
-
-        <div style="height: 30px;"></div>
-
-
-    <section>
-        <h2>Mon ressenti et mon positionnement</h2>
-        <p>Votre ressenti et positionnement personnel.</p>
+        {% endfor %}
     </section>
 
-    </section>
-    <div style="height: 30px;"></div>
+    {# ===================== Création d'outil ===================== #}
+    <section class="mb-5 p-3" style="background-color: #fff9c4; border-radius: 10px;">
+        <h2 class="mb-4">Création d'outil</h2>
 
+        {% set creation_outil_competences = [
+            {
+                'title': 'AC13.01 Utiliser un système informatique et ses outils',
+                'analyse_link': 'https://docs.google.com/document/d/1VWWm2eP9TH2U7koHK-v8Nu6MHGejdNvsPLjl1d7cJGQ/edit?usp=sharing',
+                'preuve_link': 'https://docs.google.com/document/d/1XUvvfHCwn8_q5gxmTdTXjlq9Xtbs_PLQMpln23EtZ_4/edit?usp=sharing',
+                'description': 'Savoir transformer un algorithme en code fonctionnelle dans un langage de programmation',
+                'ressenti': 'Lors de la traduction d’un algorithme de tri du pseudo-code vers le C, j’ai apprécié comprendre précisément comment les structures de contrôle se transforment.'
+            },
+            {
+                'title': 'AC13.02 Lire, exécuter, corriger et modifier un programme',
+                'analyse_link': 'https://docs.google.com/document/d/1A3CRBqwnTIzDZ77ypHNO1g8rkrfZBvpoOtd-OQjlRYk/edit?usp=sharing',
+                'preuve_link': 'https://docs.google.com/document/d/1HIUKTaC_yIaivUA7faiXpfCxz1CGdwo7VGjhjxtvHFw/edit?usp=sharing',
+                'description': 'Notre objectif de comprendre un programme et en cas d’erreur les résoudre.',
+                'ressenti': 'Pendant les activités, j’ai trouvé la programmation en Python assez satisfaisante, car la syntaxe est plus lisible et la logique plus facile à suivre.'
+            },
+            {
+                'title': 'AC13.03 Traduire un algorithme, dans un langage et pour un environnement donné',
+                'analyse_link': 'https://docs.google.com/document/d/1QE5m4HLDkI8jPGJ_9j7hFRD3JI1-YGWHbWaAwveLQCY/edit?usp=sharing',
+                'preuve_link': 'https://docs.google.com/document/d/1u-89aaw8u5f-uzVZOxeZgFKCX_QDEsXAaSS-by2dP0M/edit?usp=sharing',
+                'description': 'Nous allons voir comment réaliser le programme à l’aide d’un algorithme.',
+                'ressenti': 'Pendant les activités, j’ai trouvé satisfaisant de travailler à partir d’algorithmes, car cela permet de mieux organiser les idées avant de programmer.'
+            }
+        ] %}
+
+        {% for comp in creation_outil_competences %}
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h3 class="card-title">{{ comp.title }}</h3>
+
+                    {% block description3 %}
+                        <p class="card-text">{{ comp.description }}</p>
+                    {% endblock %}
+
+                    {% block ressenti3 %}
+                        <div class="mt-3 mb-3">
+                            <h5>Mon ressenti et positionnement</h5>
+                            <p>{{ comp.ressenti }}</p>
+                        </div>
+                    {% endblock %}
+
+                    <a href="{{ comp.analyse_link }}" class="btn btn-primary me-2" target="_blank">Analyse réflexive</a>
+                    <a href="{{ comp.preuve_link }}" class="btn btn-secondary" target="_blank">Document de preuve</a>
+                </div>
+            </div>
+        {% endfor %}
+    </section>
 
 </div>
 {% endblock %}
-
-
-
-

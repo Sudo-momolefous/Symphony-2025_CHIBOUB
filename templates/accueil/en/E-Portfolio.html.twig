@@ -1,0 +1,137 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}My E-Portfolio{% endblock %}
+
+{% block body %}
+<div class="container my-5">
+
+    <h1 class="text-center mb-4">My E-Portfolio</h1>
+    <p class="lead text-center mb-5">This is the E-portfolio of CHIBOUB Mohamed in BUT RT 1</p>
+
+    {# ===================== Administrate ===================== #}
+    <section class="mb-5 p-3" style="background-color: #d5f5e3; border-radius: 10px;">
+        <h2 class="mb-4">Administrate</h2>
+
+        {% set administrer_competences = [
+            {
+                'title': 'AC11.02 Understand the architecture and fundamentals of digital systems, the principles of information coding, communications, and the Internet',
+                'analyse_link': 'https://docs.google.com/document/d/1pciDbHnWq_99yRCfy9ZzfJcKJLLqSj3h59XO0Ucr_Bg/edit?usp=sharing',
+                'preuve_link': 'https://docs.google.com/document/d/1jJ-umN70mfhsy18dgszxrlGaCOUC5h8HsbkJ5yBp8FY/edit?usp=sharing',
+                'description': 'In this learning activity, our goal is to understand a digital system.',
+                'ressenti': 'During the activities, I felt generally comfortable and interested, especially during practical phases.'
+            },
+            {
+                'title': 'AC11.3 Configure the basic functions of the local network',
+                'analyse_link': 'https://docs.google.com/document/d/1QaiqFDhXk3j-9GImzEWd1b5MHt2ARu4bsttcaV6XmVw/edit?usp=sharing',
+                'preuve_link': 'https://docs.google.com/document/d/1fF-75sIcDA1ldVesVRpGs1VwbphooMN4HEPkXJbey-M/edit?usp=sharing',
+                'description': 'In this learning activity, the goal is to know how to configure the basics of a network.',
+                'ressenti': 'During practical exercises and SAE, I progressively felt more comfortable with network configuration.'
+            },
+            {
+                'title': 'AC11.6 Install a client workstation, explain the procedure implemented',
+                'analyse_link': 'https://docs.google.com/document/d/16v024vTwf2lsZf-kIKE1lMP_0EZ1gfHuZGjpVmgCs6w/edit?usp=sharing',
+                'preuve_link': 'https://docs.google.com/document/d/19eC-XTAuixHNhTKqV-vG8bWFuY_JBp9uwrMnnH3wBfU/edit?usp=sharing',
+                'description': 'Understand the process for installing a client workstation.',
+                'ressenti': 'During the manipulations, I felt comfortable, especially when creating and installing virtual machines.'
+            }
+        ] %}
+
+        {% for comp in administrer_competences %}
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h3 class="card-title">{{ comp.title }}</h3>
+                    <p class="card-text">{{ comp.description }}</p>
+                    <div class="mt-3 mb-3">
+                        <h5>My feelings and positioning</h5>
+                        <p>{{ comp.ressenti }}</p>
+                    </div>
+                    <a href="{{ comp.analyse_link }}" class="btn btn-primary me-2" target="_blank">Reflective Analysis</a>
+                    <a href="{{ comp.preuve_link }}" class="btn btn-secondary" target="_blank">Proof Document</a>
+                </div>
+            </div>
+        {% endfor %}
+    </section>
+
+    {# ===================== Connect ===================== #}
+    <section class="mb-5 p-3" style="background-color: #d0e7f9; border-radius: 10px;">
+        <h2 class="mb-4">Connect</h2>
+
+        {% set connecter_competences = [
+            {
+                'title': 'AC12.01 Measure and analyze signals',
+                'analyse_link': 'https://docs.google.com/document/d/19oNufky1zcEQXh6POO8xODQrJcPLpvSOyDk1189HYkw/edit?usp=sharing',
+                'preuve_link': 'https://docs.google.com/document/d/16m_FGLVSZw8uufoLleq-JjsXhXAXtGit6XFlgoLdAjg/edit?usp=sharing',
+                'description': 'Our goal is to measure and analyze signals.',
+                'ressenti': 'I really enjoyed using the reflectometer because it is a very concrete tool that allows us to quickly visualize the state of a network installation.'
+            },
+            {
+                'title': 'AC12.03 Deploy transmission supports',
+                'analyse_link': 'https://docs.google.com/document/d/1DRV1I6NoUCaNBJgtJAE0hggSyMnzKun2OuGZ6y1ixgI/edit?usp=sharing',
+                'preuve_link': 'https://docs.google.com/document/d/1a7Tz44ZtbI4HYMlOhR55KQCvDal20uHBFHlblWQKAy4/edit?usp=sharing',
+                'description': 'Our goal is to deploy transmission supports.',
+                'ressenti': 'During the activities, I felt very comfortable, especially during practical exercises on fiber optics.'
+            }
+        ] %}
+
+        {% for comp in connecter_competences %}
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h3 class="card-title">{{ comp.title }}</h3>
+                    <p class="card-text">{{ comp.description }}</p>
+                    <div class="mt-3 mb-3">
+                        <h5>My feelings and positioning</h5>
+                        <p>{{ comp.ressenti }}</p>
+                    </div>
+                    <a href="{{ comp.analyse_link }}" class="btn btn-primary me-2" target="_blank">Reflective Analysis</a>
+                    <a href="{{ comp.preuve_link }}" class="btn btn-secondary" target="_blank">Proof Document</a>
+                </div>
+            </div>
+        {% endfor %}
+    </section>
+
+    {# ===================== Tool Creation ===================== #}
+    <section class="mb-5 p-3" style="background-color: #fff9c4; border-radius: 10px;">
+        <h2 class="mb-4">Tool Creation</h2>
+
+        {% set creation_outil_competences = [
+            {
+                'title': 'AC13.01 Use a computer system and its tools',
+                'analyse_link': 'https://docs.google.com/document/d/1VWWm2eP9TH2U7koHK-v8Nu6MHGejdNvsPLjl1d7cJGQ/edit?usp=sharing',
+                'preuve_link': 'https://docs.google.com/document/d/1XUvvfHCwn8_q5gxmTdTXjlq9Xtbs_PLQMpln23EtZ_4/edit?usp=sharing',
+                'description': 'Know how to turn an algorithm into functional code in a programming language.',
+                'ressenti': 'While translating a sorting algorithm from pseudocode to C, I enjoyed understanding exactly how control structures transform.'
+            },
+            {
+                'title': 'AC13.02 Read, execute, correct and modify a program',
+                'analyse_link': 'https://docs.google.com/document/d/1A3CRBqwnTIzDZ77ypHNO1g8rkrfZBvpoOtd-OQjlRYk/edit?usp=sharing',
+                'preuve_link': 'https://docs.google.com/document/d/1HIUKTaC_yIaivUA7faiXpfCxz1CGdwo7VGjhjxtvHFw/edit?usp=sharing',
+                'description': 'Our goal is to understand a program and fix any errors if needed.',
+                'ressenti': 'During the activities, I found programming in Python quite satisfying because the syntax is more readable and the logic easier to follow.'
+            },
+            {
+                'title': 'AC13.03 Translate an algorithm into a programming language and for a given environment',
+                'analyse_link': 'https://docs.google.com/document/d/1QE5m4HLDkI8jPGJ_9j7hFRD3JI1-YGWHbWaAwveLQCY/edit?usp=sharing',
+                'preuve_link': 'https://docs.google.com/document/d/1u-89aaw8u5f-uzVZOxeZgFKCX_QDEsXAaSS-by2dP0M/edit?usp=sharing',
+                'description': 'We will see how to implement a program using an algorithm.',
+                'ressenti': 'During the activities, I found it satisfying to work from algorithms because it helps to better organize ideas before coding.'
+            }
+        ] %}
+
+        {% for comp in creation_outil_competences %}
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h3 class="card-title">{{ comp.title }}</h3>
+                    <p class="card-text">{{ comp.description }}</p>
+                    <div class="mt-3 mb-3">
+                        <h5>My feelings and positioning</h5>
+                        <p>{{ comp.ressenti }}</p>
+                    </div>
+                    <a href="{{ comp.analyse_link }}" class="btn btn-primary me-2" target="_blank">Reflective Analysis</a>
+                    <a href="{{ comp.preuve_link }}" class="btn btn-secondary" target="_blank">Proof Document</a>
+                </div>
+            </div>
+        {% endfor %}
+    </section>
+
+</div>
+{% endblock %}
