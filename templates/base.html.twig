@@ -20,29 +20,40 @@
             color: black;
         }
 
-        .example-wrapper {
-            margin: 1em auto;
-            max-width: 800px;
-            width: 95%;
-            font: 18px/1.5 sans-serif;
-        }
-
-        .example-wrapper code { 
-            background: rgb(255, 255, 255); 
-            padding: 2px 6px; 
-        }
-
         .container {
             flex: 1; /* pousse le footer en bas */
         }
 
         .pied {
-            background-color: black;
+            background-color: #000000; /* même couleur que la navbar */
             color: white;
-            text-align: center;
-            padding: 15px 0;
+            padding: 20px 0;
             width: 100%;
             box-sizing: border-box;
+        }
+
+        .footer-column {
+            margin-bottom: 15px;
+        }
+
+        .footer-column h5 {
+            margin-bottom: 10px;
+        }
+
+        .footer-column a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .footer-column a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .footer-column {
+                flex: 1 1 100%;
+                text-align: center;
+            }
         }
 
         {% block inline_styles %}{% endblock %}
@@ -86,8 +97,40 @@
     {% block body %}{% endblock %}
 </div>
 
-<footer class="pied">
-    <p>&copy; 2025 - CHIBOUB Mohamed | BUT Réseaux & Télécommunications. Tous droits réservés.</p>
+
+<footer class="pied d-flex flex-wrap justify-content-around align-items-start">
+    <div class="footer-column">
+{#    
+        <h5>Contact</h5>
+        <p style="margin:0;">
+            Mohamed CHIBOUB<br>
+            BUT Réseaux & Télécommunications<br>
+            <a href="mailto:mohamed.chiboub@example.com">mohamed.chiboub@example.com</a>
+        </p>
+    </div>
+
+    <div class="footer-column">
+        <h5>Quick Links</h5>
+        <ul style="list-style:none; padding:0; margin:0;">
+            <li><a href="{{ path('app_accueil', {'_locale': app.request.locale}) }}">Accueil</a></li>
+            <li><a href="{{ path('app_loisir', {'_locale': app.request.locale}) }}">Loisir</a></li>
+            <li><a href="{{ path('app_login', {'_locale': app.request.locale}) }}">CV</a></li>
+            <li><a href="{{ path('app_e_portfolio', {'_locale': app.request.locale}) }}">E-Portfolio</a></li>
+            <li><a href="{{ path('app_contact', {'_locale': app.request.locale}) }}">Contact</a></li>
+        </ul>
+    </div>
+
+    <div class="footer-column">
+        <h5>Follow Me</h5>
+        <p style="margin:0;">
+            <a href="https://github.com/Sudo-momolefous" target="_blank">GitHub</a><br>
+            <a href="https://www.instagram.com/momolefous01/" target="_blank">Instagram</a><br>
+        </p>
+    </div>
+#}
+    <div style="width:100%; text-align:center; margin-top:15px; color:white;">
+        <small>&copy; 2025 - Mohamed CHIBOUB | All rights reserved.</small>
+    </div>
 </footer>
 
 {% block javascript %}
